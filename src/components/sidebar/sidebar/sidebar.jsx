@@ -11,8 +11,12 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import MailIcon from "@mui/icons-material/Mail";
+import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
+import LocalHospitalOutlinedIcon from "@mui/icons-material/LocalHospitalOutlined";
+import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
+import colorPalette from "../../../utils/colorPalette";
 
 const drawerWidth = 240;
 
@@ -22,7 +26,11 @@ export default function SideBar() {
       <CssBaseline />
       <AppBar
         position="fixed"
-        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+        sx={{
+          width: `calc(100% - ${drawerWidth}px)`,
+          ml: `${drawerWidth}px`,
+          backgroundColor: colorPalette().black,
+        }}
       >
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
@@ -42,25 +50,53 @@ export default function SideBar() {
         variant="permanent"
         anchor="left"
       >
-        <Toolbar />
-        <Divider />
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>//ICON</ListItemIcon>
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
-        </List>
-        <Divider />
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>//ICON</ListItemIcon>
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
-        </List>
+        <Box
+          sx={{
+            backgroundColor: colorPalette().black,
+            height: "100vh",
+            color: "white",
+          }}
+        >
+          <Toolbar />
+          <Divider />
+          <List>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon sx={{ color: colorPalette().white }}>
+                  <HomeOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText>Dashboard</ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </List>
+          <Divider />
+          <List>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon sx={{ color: colorPalette().white }}>
+                  <CameraAltOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText>Camera View</ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon sx={{ color: colorPalette().white }}>
+                  <RoomOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText>Live Robot Tracking</ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon sx={{ color: colorPalette().white }}>
+                  <LocalHospitalOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText>Robot Health Check</ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </Box>
       </Drawer>
       <Box
         component="main"
