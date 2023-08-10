@@ -3,6 +3,8 @@ export default function colorPalette() {
     black: "#000000",
     AFUBlue: "#0986B7",
     white: "#FFFFFF",
+    AFUGrey: "#919EAB",
+    AFURed: "#DC3545",
   };
 
   return colors;
