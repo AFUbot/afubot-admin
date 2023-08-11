@@ -9,26 +9,11 @@ const theme = createTheme({
     fontFamily: ["Inter"].join(","),
     fontSize: 12,
   },
-  palette: {
-    primary: {
-      main: "#919EAB",
-    },
-    divider: {
-      background: "#FFFFFF",
-    },
-    components: {
-      // Name of the component
-      listItemText: {
-        styleOverrides: {
-          // Name of the slot
-          root: {
-            // Some CSS
-            fontSize: "21rem",
-          },
-        },
-      },
-    },
-  },
+  // palette: {
+  //   divider: {
+  //     background: colors.orange[500],
+  //   },
+  // },
 });
 
 function App() {
