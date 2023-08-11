@@ -11,18 +11,30 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import MailIcon from "@mui/icons-material/Mail";
+import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
+import LocalHospitalOutlinedIcon from "@mui/icons-material/LocalHospitalOutlined";
+import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
+import RestaurantMenuOutlinedIcon from "@mui/icons-material/RestaurantMenuOutlined";
+import colorPalette from "../../../utils/colorPalette";
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+
+import Logo from "../../../assets/logo.jpg";
 
 const drawerWidth = 240;
 
 export default function SideBar() {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box className="SideBar" sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
         position="fixed"
-        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+        sx={{
+          width: `calc(100% - ${drawerWidth}px)`,
+          ml: `${drawerWidth}px`,
+          backgroundColor: "primary",
+        }}
       >
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
@@ -42,32 +54,98 @@ export default function SideBar() {
         variant="permanent"
         anchor="left"
       >
-        <Toolbar />
-        <Divider />
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>//ICON</ListItemIcon>
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
-        </List>
-        <Divider />
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>//ICON</ListItemIcon>
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
-        </List>
+        <Box
+          sx={{
+            backgroundColor: colorPalette().black,
+            height: "100vh",
+            color: colorPalette().AFUGrey,
+          }}
+        >
+          <Box
+            sx={{
+              height: "5vh",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: "-60px",
+            }}
+          >
+            <img style={{ width: "50%" }} src={Logo}></img>
+          </Box>
+          <Toolbar />
+          <List>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon sx={{ color: colorPalette().AFUGrey }}>
+                  <HomeOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography>Dashboard</Typography>
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </List>
+
+          <Typography variant="overline">CONTROLS</Typography>
+          <List>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon sx={{ color: colorPalette().AFUGrey }}>
+                  <CameraAltOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText>Camera View</ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon sx={{ color: colorPalette().AFUGrey }}>
+                  <RoomOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText>Live Robot Tracking</ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon sx={{ color: colorPalette().AFUGrey }}>
+                  <LocalHospitalOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText>Robot Health Check</ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </List>
+
+          <List>
+            <Typography variant="overline">PAGES</Typography>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon sx={{ color: colorPalette().AFUGrey }}>
+                  <RestaurantMenuOutlinedIcon />
+                </ListItemIcon>
+                {/* <Typography fontSize={15}>Dashboard</Typography> */}
+                <ListItemText>Restaurant List</ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </List>
+          <Divider />
+          <List>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon sx={{ color: colorPalette().AFURed }}>
+                  <LogoutOutlinedIcon />
+                </ListItemIcon>
+                <Typography color={colorPalette().AFURed}>Log Out</Typography>
+                {/* <ListItemText>Log Out</ListItemText> */}
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </Box>
       </Drawer>
       <Box
         component="main"
         sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
       >
         <Toolbar />
-        <Typography paragraph>
+        <Typography variant="h5">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
           dolor purus non enim praesent elementum facilisis leo vel. Risus at
