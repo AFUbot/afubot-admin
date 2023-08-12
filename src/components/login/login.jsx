@@ -41,7 +41,7 @@ const Login = () => {
                         marginBottom: "2em",
                     }}
                 >
-                    <img style={{ width: "30%" }} src={Logo}></img>
+                    <img style={{ width: "30%" }} src={Logo} alt="AFUbot logo"></img>
                 </Box>
                 <Typography
                     style={{ color: colorPalette().white, fontSize: 12, marginBottom: '2em' }}
