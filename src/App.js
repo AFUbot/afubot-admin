@@ -24,7 +24,7 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/login" element={<Login></Login>}></Route>
-                    <Route path="/home" element={<SideBar></SideBar>}></Route>
+                    <Route path="/" element={<SideBar></SideBar>}></Route>
                 </Routes>
             </Router>
 
