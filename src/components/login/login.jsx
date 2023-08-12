@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
+import Link from "@mui/material/Link";
 import { Grid, Paper } from "@mui/material";
 import colorPalette from "../../utils/colorPalette";
 import "./login.css";
@@ -90,11 +91,19 @@ const Login = () => {
                 <Button
                     type="submit"
                     variant="contained"
-                    style={{ background: colorPalette().AFUBlue }}
+                    style={{
+                        background: colorPalette().AFUBlue,
+                        marginBottom: "1em",
+                    }}
                     fullWidth
                 >
                     Sign In
                 </Button>
+                <Typography>
+                    <Link href="#" underline="hover" color="white">
+                        Forgot Password
+                    </Link>
+                </Typography>
             </Paper>
         </Grid>
     );
