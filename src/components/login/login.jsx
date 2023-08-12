@@ -17,13 +17,13 @@ const Login = () => {
         background: colorPalette().AFUBlue,
         minHeight: "100vh",
         width: "100vw",
-        paddingTop: 70,
+        paddingTop: 100,
     };
 
     const paperStyle = {
         padding: 20,
-        height: "70vh",
-        width: 280,
+        height: "auto",
+        width: '20vw',
         margin: "auto",
         background: colorPalette().black,
     };
@@ -99,7 +99,7 @@ const Login = () => {
                 >
                     Sign In
                 </Button>
-                <Typography>
+                <Typography style={{ marginBottom: "2em" }}>
                     <Link href="#" underline="hover" color="white">
                         Forgot Password
                     </Link>
