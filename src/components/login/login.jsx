@@ -3,8 +3,9 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from '@mui/material/Checkbox';
-import { Grid, Paper, } from "@mui/material";
+import Checkbox from "@mui/material/Checkbox";
+import Button from "@mui/material/Button";
+import { Grid, Paper } from "@mui/material";
 import colorPalette from "../../utils/colorPalette";
 import "./login.css";
 
@@ -27,8 +28,8 @@ const Login = () => {
     };
 
     const textFieldStyle = {
-        marginBottom: '1em',
-    }
+        marginBottom: "1em",
+    };
 
     return (
         <Grid style={gridStyle}>
@@ -40,22 +41,60 @@ const Login = () => {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
+                        margin: "3em 0",
+                    }}
+                >
+                    <img
+                        style={{ width: "30%" }}
+                        src={Logo}
+                        alt="AFUbot logo"
+                    ></img>
+                </Box>
+                <Typography
+                    style={{
+                        color: colorPalette().white,
+                        // fontSize: 12,
                         marginBottom: "2em",
                     }}
                 >
-                    <img style={{ width: "30%" }} src={Logo} alt="AFUbot logo"></img>
-                </Box>
-                <Typography
-                    style={{ color: colorPalette().white, fontSize: 12, marginBottom: '2em' }}
-                >
                     Please enter your user information
                 </Typography>
-                
+
                 {/* Form Input Start*/}
-                <TextField style={textFieldStyle} placeholder="Enter username" color="primary" fullWidth required />
-                <TextField style={textFieldStyle} type="password" placeholder="Enter password" color="primary" fullWidth required />
-                <FormControlLabel control={<Checkbox style={{ color: "white" }} />} label="Remember me" />
-                
+                <TextField
+                    style={textFieldStyle}
+                    placeholder="Enter username"
+                    color="primary"
+                    fullWidth
+                    required
+                />
+                <TextField
+                    style={textFieldStyle}
+                    type="password"
+                    placeholder="Enter password"
+                    color="primary"
+                    fullWidth
+                    required
+                />
+                <FormControlLabel
+                    control={
+                        <Checkbox
+                            // checked={state.checked}
+                            // onChange={handleChange}
+                            style={{ color: "white" }}
+                        />
+                    }
+                    label="Remember me"
+                    style={{ marginBottom: "1em" }}
+                />
+                <Button
+                    type="submit"
+                    variant="contained"
+                    style={{ background: colorPalette().AFUBlue }}
+                    fullWidth
+                >
+                    Sign In
+                </Button>
             </Paper>
         </Grid>
     );
