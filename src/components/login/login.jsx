@@ -2,6 +2,8 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from '@mui/material/Checkbox';
 import { Grid, Paper, } from "@mui/material";
 import colorPalette from "../../utils/colorPalette";
 import "./login.css";
@@ -49,9 +51,11 @@ const Login = () => {
                     Please enter your user information
                 </Typography>
                 
-                {/* Credential Input */}
+                {/* Form Input Start*/}
                 <TextField style={textFieldStyle} placeholder="Enter username" color="primary" fullWidth required />
                 <TextField style={textFieldStyle} type="password" placeholder="Enter password" color="primary" fullWidth required />
+                <FormControlLabel control={<Checkbox style={{ color: "white" }} />} label="Remember me" />
+                
             </Paper>
         </Grid>
     );
