@@ -10,6 +10,7 @@ export default function colorPalette() {
     AFULightSuccess: "#EAF6EC",
     AFUPurple: "#624BFF",
     AFULightPurple: "#E0DCFE",
+    AFUWarning: "#F59E0B",
   };
 
   return colors;

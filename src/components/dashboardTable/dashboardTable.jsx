@@ -16,24 +16,39 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import colorPalette from "../../utils/colorPalette";
 import CircleIcon from "@mui/icons-material/Circle";
+import BatteryChargingFullIcon from "@mui/icons-material/BatteryChargingFull";
+import LinearProgress, {
+  linearProgressClasses,
+} from "@mui/material/LinearProgress";
 
 const robots = [
   {
     robotName: "Robot A",
     status: "Online",
     lastUpdate: "2023-08-10 10:30AM",
+    battery: 50,
   },
   {
     robotName: "Robot B",
     status: "Offline",
     lastUpdate: "N/A",
+    battery: 100,
   },
   {
     robotName: "Robot C",
     status: "Online",
     lastUpdate: "2023-08-10 10:25AM",
+    battery: 20,
   },
 ];
+
+// const detBatteryColor = (val) => {
+//   if (val > 60) {
+//     return "success";
+//   } else if (val < 60 && val > 40) {
+//     return "warning";
+//   } else return "danger";
+// };
 
 const RobotTable = () => {
   return (
@@ -47,6 +62,7 @@ const RobotTable = () => {
             <TableCell>Health Check</TableCell>
             <TableCell>Status</TableCell>
             <TableCell>Last Update</TableCell>
+            <TableCell>Battery</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -99,6 +115,9 @@ const RobotTable = () => {
                 ></CircleIcon>
               </TableCell>
               <TableCell>{robot.lastUpdate}</TableCell>
+              <TableCell>
+                <LinearProgress variant="buffer" value={robot.battery} />
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

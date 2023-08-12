@@ -11,7 +11,7 @@ const DashboardCard = (props) => {
         alignItems: "start",
         padding: "16px",
         marginBottom: "16px",
-        width: "20%",
+        width: "100%",
         marginRight: "10px",
       }}
     >

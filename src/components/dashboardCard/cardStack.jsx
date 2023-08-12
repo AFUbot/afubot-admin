@@ -24,7 +24,7 @@ const CardStack = () => {
     >
       <DashboardCard
         title="Orders in Progress"
-        heading="20"
+        heading="3"
         subtitle="27 Completed Today"
         icon={<PublishedWithChangesOutlinedIcon />}
         bg={colorPalette().AFULightBlue}
