@@ -27,6 +27,13 @@ function App() {
         </Routes>
       </Router>
 
+      <Router>
+        <Routes>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/" element={<SideBar></SideBar>}></Route>
+        </Routes>
+      </Router>
+
       <ThemeProvider theme={theme}>
         <div className="App">{/* <SideBar /> */}</div>
       </ThemeProvider>
