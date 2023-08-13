@@ -76,6 +76,7 @@ const RobotTable = () => {
                     backgroundColor: colorPalette().AFUPurple,
                   }}
                   variant="contained"
+                  disabled={robot.status === "Offline"}
                 >
                   <LinkedCameraIcon></LinkedCameraIcon>
                 </Button>

@@ -6,7 +6,7 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  redirect,
+  Navigate,
 } from "react-router-dom";
 import Login from "./components/login/login";
 import HealthMonitoringPage from "./components/robotHealth/robotHealth";
@@ -33,7 +33,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        {loggedIn ? <SideBar toggleLogin={login}></SideBar> : null}
+        {loggedIn ? (
+          <SideBar toggleLogin={login}></SideBar>
+        ) : (
+          <Navigate to="/login" />
+        )}
 
         <Routes>
           <Route

@@ -24,6 +24,7 @@ import {
   LocalShippingOutlined,
   ThermostatOutlined,
 } from "@mui/icons-material";
+import HealthStatistics from "./healthStatistics";
 
 const RobotImage = styled("img")({
   width: "100%",
@@ -36,10 +37,11 @@ const HealthMonitoringPage = () => {
       <Container
         maxWidth="100%"
         sx={{
-          minHeight: "100vh",
+          minHeight: "80vh",
           display: "flex",
           width: "100%",
           justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Grid container spacing={3}>
@@ -59,26 +61,8 @@ const HealthMonitoringPage = () => {
                   bg={colorPalette().AFULightSuccess}
                   color={colorPalette().AFUSuccess}
                 ></DashboardCard>
-                {/* <Card>
-                  <CardContent>
-                    <BatteryFullIcon fontSize="large" color="primary" />
-                    <Typography variant="h6" gutterBottom>
-                      Robot Battery
-                    </Typography>
-                    <Typography variant="subtitle1">80%</Typography>
-                  </CardContent>
-                </Card> */}
               </Grid>
               <Grid item xs={6}>
-                {/* <Card>
-                  <CardContent>
-                    <GpsFixedIcon fontSize="large" color="primary" />
-                    <Typography variant="h6" gutterBottom>
-                      GPS Tracking
-                    </Typography>
-                    <Typography variant="subtitle1">Active</Typography>
-                  </CardContent>
-                </Card> */}
                 <DashboardCard
                   title="GPS Tracking"
                   icon={<GpsFixedOutlined />}
@@ -99,15 +83,6 @@ const HealthMonitoringPage = () => {
                 ></DashboardCard>
               </Grid>
               <Grid item xs={6}>
-                {/* <Card> */}
-                {/* <CardContent>
-                    <LocalShippingIcon fontSize="large" color="primary" />
-                    <Typography variant="h6" gutterBottom>
-                      Delivery Status
-                    </Typography>
-                    <Typography variant="subtitle1">On Route</Typography>
-                  </CardContent> */}
-                {/* </Card> */}
                 <DashboardCard
                   title="Delivery"
                   icon={<LocalShippingOutlined />}
@@ -118,15 +93,6 @@ const HealthMonitoringPage = () => {
                 ></DashboardCard>
               </Grid>
               <Grid item xs={6}>
-                {/* <Card>
-                  <CardContent>
-                    <ThermostatIcon fontSize="large" color="primary" />
-                    <Typography variant="h6" gutterBottom>
-                      Temperature
-                    </Typography>
-                    <Typography variant="subtitle1">25°C</Typography>
-                  </CardContent>
-                </Card> */}
                 <DashboardCard
                   title="Temperature"
                   icon={<ThermostatOutlined />}
@@ -174,6 +140,7 @@ const HealthMonitoringPage = () => {
           <Grid item xs={12} md={6}></Grid>
         </Grid>
       </Container>
+      <HealthStatistics></HealthStatistics>
     </Box>
   );
 };

@@ -26,7 +26,13 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
 import Logo from "../../../assets/logo.jpg";
 
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  NavLink,
+} from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -76,7 +82,7 @@ export default function SideBar(props) {
           </Box>
           <Toolbar />
           <List>
-            <Link to="/">
+            <NavLink to="/">
               <ListItem disablePadding>
                 <ListItemButton>
                   <ListItemIcon sx={{ color: colorPalette().AFUGrey }}>
@@ -87,7 +93,7 @@ export default function SideBar(props) {
                   </ListItemText>
                 </ListItemButton>
               </ListItem>
-            </Link>
+            </NavLink>
           </List>
 
           <Typography variant="overline">CONTROLS</Typography>
@@ -132,7 +138,7 @@ export default function SideBar(props) {
           </List>
           <Divider />
           <List>
-            <Link to="/login" onClick={() => props.toggleLogin(false)}>
+            <NavLink to="/login" onClick={() => props.toggleLogin(false)}>
               <ListItem disablePadding>
                 <ListItemButton>
                   <ListItemIcon sx={{ color: colorPalette().AFURed }}>
@@ -142,7 +148,7 @@ export default function SideBar(props) {
                   {/* <ListItemText>Log Out</ListItemText> */}
                 </ListItemButton>
               </ListItem>
-            </Link>
+            </NavLink>
           </List>
         </Box>
       </Drawer>
