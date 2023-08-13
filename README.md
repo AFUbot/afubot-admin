@@ -1,1 +1,1 @@
-##AFU BOT
+# AFUbot Admin Site
