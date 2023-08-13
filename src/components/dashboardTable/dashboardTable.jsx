@@ -8,7 +8,6 @@ import {
   TableRow,
   Paper,
   Button,
-  Chip,
 } from "@mui/material";
 
 import LinkedCameraIcon from "@mui/icons-material/LinkedCamera";
@@ -20,6 +19,7 @@ import BatteryChargingFullIcon from "@mui/icons-material/BatteryChargingFull";
 import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
+import { Link } from "react-router-dom";
 
 const robots = [
   {
@@ -92,15 +92,17 @@ const RobotTable = () => {
                 </Button>
               </TableCell>
               <TableCell>
-                <Button
-                  sx={{
-                    borderRadius: 12,
-                    backgroundColor: colorPalette().AFUSuccess,
-                  }}
-                  variant="contained"
-                >
-                  <LocalHospitalIcon></LocalHospitalIcon>
-                </Button>
+                <Link to="/health">
+                  <Button
+                    sx={{
+                      borderRadius: 12,
+                      backgroundColor: colorPalette().AFUSuccess,
+                    }}
+                    variant="contained"
+                  >
+                    <LocalHospitalIcon></LocalHospitalIcon>
+                  </Button>
+                </Link>
               </TableCell>
               <TableCell>
                 <CircleIcon

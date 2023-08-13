@@ -32,25 +32,19 @@ const RobotImage = styled("img")({
 
 const HealthMonitoringPage = () => {
   return (
-    <Box
-      sx={{
-        width: "100%",
-        padding: "-50%",
-      }}
-      className="bgRobotHealth"
-    >
+    <Box className="bgRobotHealth container">
       <Container
-        maxWidth="xl"
+        maxWidth="100%"
         sx={{
           minHeight: "100vh",
-          width: "100%",
           display: "flex",
-          alignItems: "center",
+          width: "100%",
+          justifyContent: "center",
         }}
       >
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Typography variant="h6" gutterBottom>
+            <Typography fontWeight="bold" variant="h5" gutterBottom>
               Robot A
             </Typography>
           </Grid>

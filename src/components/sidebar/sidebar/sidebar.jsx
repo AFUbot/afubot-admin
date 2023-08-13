@@ -17,7 +17,6 @@ import ListItemText from "@mui/material/ListItemText";
 
 //Icons
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import MailIcon from "@mui/icons-material/Mail";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import LocalHospitalOutlinedIcon from "@mui/icons-material/LocalHospitalOutlined";
 import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
@@ -27,14 +26,7 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
 import Logo from "../../../assets/logo.jpg";
 
-//Components
-import RobotTable from "../../dashboardTable/dashboardTable";
-import DashboardCard from "../../dashboardCard/dashboardCard";
-import CardStack from "../../dashboardCard/cardStack";
-import HealthMonitoringPage from "../../robotHealth/robotHealth";
-
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Dashboard from "../../dashboard/dashboard";
 
 const drawerWidth = 240;
 
@@ -84,16 +76,18 @@ export default function SideBar(props) {
           </Box>
           <Toolbar />
           <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon sx={{ color: colorPalette().AFUGrey }}>
-                  <HomeOutlinedIcon />
-                </ListItemIcon>
-                <ListItemText>
-                  <Typography>Dashboard</Typography>
-                </ListItemText>
-              </ListItemButton>
-            </ListItem>
+            <Link to="/">
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon sx={{ color: colorPalette().AFUGrey }}>
+                    <HomeOutlinedIcon />
+                  </ListItemIcon>
+                  <ListItemText>
+                    <Typography>Dashboard</Typography>
+                  </ListItemText>
+                </ListItemButton>
+              </ListItem>
+            </Link>
           </List>
 
           <Typography variant="overline">CONTROLS</Typography>
@@ -138,22 +132,17 @@ export default function SideBar(props) {
           </List>
           <Divider />
           <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon sx={{ color: colorPalette().AFURed }}>
-                  <LogoutOutlinedIcon />
-                </ListItemIcon>
-                <Link to="/login">
-                  <Typography
-                    color={colorPalette().AFURed}
-                    onClick={() => props.toggleLogin(false)}
-                  >
-                    Log Out
-                  </Typography>
-                </Link>
-                {/* <ListItemText>Log Out</ListItemText> */}
-              </ListItemButton>
-            </ListItem>
+            <Link to="/login" onClick={() => props.toggleLogin(false)}>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon sx={{ color: colorPalette().AFURed }}>
+                    <LogoutOutlinedIcon />
+                  </ListItemIcon>
+                  <Typography color={colorPalette().AFURed}>Log Out</Typography>
+                  {/* <ListItemText>Log Out</ListItemText> */}
+                </ListItemButton>
+              </ListItem>
+            </Link>
           </List>
         </Box>
       </Drawer>

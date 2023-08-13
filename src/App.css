@@ -7,3 +7,9 @@ body {
   margin-left: 240px;
   padding: 24px;
 }
+
+/* Remove link text decoration */
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
+}

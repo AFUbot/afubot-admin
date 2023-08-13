@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import SideBar from "./components/sidebar/sidebar/sidebar";
 import { createTheme, colors, Box } from "@mui/material";
@@ -23,7 +22,6 @@ const theme = createTheme({
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const drawerWidth = 240;
 
   const login = (val) => {
     setLoggedIn(val);
@@ -38,6 +36,10 @@ function App() {
         {loggedIn ? <SideBar toggleLogin={login}></SideBar> : null}
 
         <Routes>
+          <Route
+            path="/health"
+            element={<HealthMonitoringPage></HealthMonitoringPage>}
+          />
           <Route path="/login" element={<Login toggleLogin={login}></Login>} />
           <Route path="/" element={<Dashboard></Dashboard>} />
         </Routes>
