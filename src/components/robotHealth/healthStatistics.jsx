@@ -22,7 +22,7 @@ const healthStatistics = () => {
           <Grid item xs={12} lg={6}>
             <HoursOperatedBarChart></HoursOperatedBarChart>
           </Grid>
-          <Grid item xs={12} lg={12}>
+          <Grid item xs={12} lg={6}>
             <RestaurantPieChart></RestaurantPieChart>
           </Grid>
         </Grid>

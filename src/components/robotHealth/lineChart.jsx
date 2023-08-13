@@ -33,7 +33,6 @@ export default function LineCh() {
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="day" />
         <YAxis domain={[40, 60]}>
           <Label

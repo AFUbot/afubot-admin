@@ -44,7 +44,7 @@ export default function DonutChartWithCustomizedLabel() {
           data={restaurantData}
           innerRadius={60}
           outerRadius={180}
-          label={({ percent }) => `${percent.toFixed(2)}%`}
+          label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
         >
           {restaurantData.map((entry, index) => (
             <Cell
