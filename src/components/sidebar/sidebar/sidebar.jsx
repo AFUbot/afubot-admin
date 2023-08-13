@@ -1,4 +1,7 @@
+//React
 import React from "react";
+
+//MATERIAL UI Components
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -11,6 +14,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+
+//Icons
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import MailIcon from "@mui/icons-material/Mail";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
@@ -21,14 +26,19 @@ import colorPalette from "../../../utils/colorPalette";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
 import Logo from "../../../assets/logo.jpg";
+
+//Components
 import RobotTable from "../../dashboardTable/dashboardTable";
 import DashboardCard from "../../dashboardCard/dashboardCard";
 import CardStack from "../../dashboardCard/cardStack";
 import HealthMonitoringPage from "../../robotHealth/robotHealth";
 
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Dashboard from "../../dashboard/dashboard";
+
 const drawerWidth = 240;
 
-export default function SideBar() {
+export default function SideBar(props) {
   return (
     <Box className="SideBar" sx={{ display: "flex" }}>
       <CssBaseline />
@@ -133,7 +143,14 @@ export default function SideBar() {
                 <ListItemIcon sx={{ color: colorPalette().AFURed }}>
                   <LogoutOutlinedIcon />
                 </ListItemIcon>
-                <Typography color={colorPalette().AFURed}>Log Out</Typography>
+                <Link to="/login">
+                  <Typography
+                    color={colorPalette().AFURed}
+                    onClick={() => props.toggleLogin(false)}
+                  >
+                    Log Out
+                  </Typography>
+                </Link>
                 {/* <ListItemText>Log Out</ListItemText> */}
               </ListItemButton>
             </ListItem>
@@ -142,12 +159,14 @@ export default function SideBar() {
       </Drawer>
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
+        sx={{
+          flexGrow: 1,
+          bgcolor: "background.default",
+          width: "100%",
+        }}
       >
-        {/* <Toolbar />
-        <RobotTable></RobotTable>
-        <CardStack></CardStack> */}
-        <HealthMonitoringPage></HealthMonitoringPage>
+        <Toolbar />
+        {/* <HealthMonitoringPage></HealthMonitoringPage> */}
       </Box>
     </Box>
   );

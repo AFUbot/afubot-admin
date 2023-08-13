@@ -1,48 +1,48 @@
 import logo from "./logo.svg";
 import "./App.css";
 import SideBar from "./components/sidebar/sidebar/sidebar";
-import { createTheme, colors } from "@mui/material";
+import { createTheme, colors, Box } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  redirect,
+} from "react-router-dom";
 import Login from "./components/login/login";
 import HealthMonitoringPage from "./components/robotHealth/robotHealth";
+import { useEffect, useState } from "react";
+import Dashboard from "./components/dashboard/dashboard";
 
 const theme = createTheme({
   typography: {
     fontFamily: ["Inter"].join(","),
     fontSize: 12,
   },
-  // palette: {
-  //   divider: {
-  //     background: colors.orange[500],
-  //   },
-  // },
 });
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const drawerWidth = 240;
+
+  const login = (val) => {
+    setLoggedIn(val);
+  };
+  useEffect(() => {
+    console.log(loggedIn); // This will log the updated value of loggedIn
+  }, [loggedIn]);
+
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Router>
+        {loggedIn ? <SideBar toggleLogin={login}></SideBar> : null}
+
         <Routes>
-          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/login" element={<Login toggleLogin={login}></Login>} />
+          <Route path="/" element={<Dashboard></Dashboard>} />
         </Routes>
       </Router>
-
-      <Router>
-        <Routes>
-          <Route
-            path="/health"
-            element={<HealthMonitoringPage></HealthMonitoringPage>}
-          ></Route>
-          <Route path="/login" element={<Login></Login>}></Route>
-          <Route path="/" element={<SideBar></SideBar>}></Route>
-        </Routes>
-      </Router>
-
-      <ThemeProvider theme={theme}>
-        <div className="App">{/* <SideBar /> */}</div>
-      </ThemeProvider>
-    </div>
+    </ThemeProvider>
   );
 }
 

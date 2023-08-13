@@ -42,7 +42,7 @@ const HealthMonitoringPage = () => {
       <Container
         maxWidth="xl"
         sx={{
-          height: "100vh",
+          minHeight: "100vh",
           width: "100%",
           display: "flex",
           alignItems: "center",
@@ -118,7 +118,7 @@ const HealthMonitoringPage = () => {
                   title="Delivery"
                   icon={<LocalShippingOutlined />}
                   heading="On Route"
-                  subtitle="5 hours remaining"
+                  subtitle="21 mins remaining"
                   bg={colorPalette().AFULightPurple}
                   color={colorPalette().AFUPurple}
                 ></DashboardCard>
@@ -150,7 +150,7 @@ const HealthMonitoringPage = () => {
             </Box>
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <Card sx={{ marginBottom: 2 }}>
+            <Card sx={{ marginBottom: 3 }}>
               <CardContent>
                 <Typography variant="h6">Total Distance Travelled:</Typography>
                 <Typography variant="h4" fontWeight="bold">
@@ -158,7 +158,7 @@ const HealthMonitoringPage = () => {
                 </Typography>
               </CardContent>
             </Card>
-            <Card sx={{ marginBottom: 2 }}>
+            <Card sx={{ marginBottom: 3 }}>
               <CardContent>
                 <Typography variant="h6">
                   Total Deliveries Completed:
@@ -170,11 +170,9 @@ const HealthMonitoringPage = () => {
             </Card>
             <Card>
               <CardContent>
-                <Typography variant="h6">
-                  Total Deliveries Completed:
-                </Typography>
+                <Typography variant="h6">Area coverage</Typography>
                 <Typography variant="h4" fontWeight="bold">
-                  20
+                  Area A
                 </Typography>
               </CardContent>
             </Card>
