@@ -24,6 +24,7 @@ import Logo from "../../../assets/logo.jpg";
 import RobotTable from "../../dashboardTable/dashboardTable";
 import DashboardCard from "../../dashboardCard/dashboardCard";
 import CardStack from "../../dashboardCard/cardStack";
+import HealthMonitoringPage from "../../robotHealth/robotHealth";
 
 const drawerWidth = 240;
 
@@ -143,9 +144,10 @@ export default function SideBar() {
         component="main"
         sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
       >
-        <Toolbar />
+        {/* <Toolbar />
         <RobotTable></RobotTable>
-        <CardStack></CardStack>
+        <CardStack></CardStack> */}
+        <HealthMonitoringPage></HealthMonitoringPage>
       </Box>
     </Box>
   );

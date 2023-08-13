@@ -1,0 +1,12 @@
+.bgRobotHealth {
+  background: linear-gradient(
+    to right,
+    white 0%,
+    white 50%,
+    #0986b7 50%,
+    #0986b7 100%
+  );
+}
+/* .imgBG {
+  background-color: rgba(9, 9, 9, 0.097);
+} */

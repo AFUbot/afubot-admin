@@ -13,6 +13,7 @@ const DashboardCard = (props) => {
         marginBottom: "16px",
         width: "100%",
         marginRight: "10px",
+        minHeight: "180px",
       }}
     >
       <Box

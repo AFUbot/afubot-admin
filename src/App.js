@@ -5,6 +5,7 @@ import { createTheme, colors } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/login/login";
+import HealthMonitoringPage from "./components/robotHealth/robotHealth";
 
 const theme = createTheme({
   typography: {
@@ -29,6 +30,10 @@ function App() {
 
       <Router>
         <Routes>
+          <Route
+            path="/health"
+            element={<HealthMonitoringPage></HealthMonitoringPage>}
+          ></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/" element={<SideBar></SideBar>}></Route>
         </Routes>
