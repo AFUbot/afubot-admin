@@ -10,7 +10,7 @@ const UserCell = (props) => {
       </Grid>
       <Grid>
         <Typography style={{fontWeight: 700}}>{props.name}</Typography>
-        <Typography style={{color: ''}}>{props.email}</Typography>
+        <Typography style={{color: colorPalette().AFUGreyText}}>{props.email}</Typography>
       </Grid>
     </Grid>
   );
