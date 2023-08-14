@@ -12,6 +12,7 @@ import Login from "./components/login/login";
 import HealthMonitoringPage from "./components/robotHealth/robotHealth";
 import { useEffect, useState } from "react";
 import Dashboard from "./components/dashboard/dashboard";
+import GpsPanel from "./components/gps/gpsTrack";
 
 const theme = createTheme({
   typography: {
@@ -40,6 +41,7 @@ function App() {
         )}
 
         <Routes>
+          <Route path="/gps" element={<GpsPanel />} />
           <Route path="/login" element={<Login toggleLogin={login}></Login>} />
           <Route path="/health/:id" element={<HealthMonitoringPage />} />
           <Route path="/" element={<Dashboard></Dashboard>} />

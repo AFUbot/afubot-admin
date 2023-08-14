@@ -106,14 +106,16 @@ export default function SideBar(props) {
                 <ListItemText>Camera View</ListItemText>
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon sx={{ color: colorPalette().AFUGrey }}>
-                  <RoomOutlinedIcon />
-                </ListItemIcon>
-                <ListItemText>Live Robot Tracking</ListItemText>
-              </ListItemButton>
-            </ListItem>
+            <Link to="/gps">
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon sx={{ color: colorPalette().AFUGrey }}>
+                    <RoomOutlinedIcon />
+                  </ListItemIcon>
+                  <ListItemText>Live Robot Tracking</ListItemText>
+                </ListItemButton>
+              </ListItem>
+            </Link>
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon sx={{ color: colorPalette().AFUGrey }}>
