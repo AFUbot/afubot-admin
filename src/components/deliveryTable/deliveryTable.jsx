@@ -1,4 +1,5 @@
 import React from "react";
+import { format, parseISO, isToday, isYesterday } from "date-fns";
 import {
     Table,
     TableBody,
@@ -17,6 +18,19 @@ import completedDeliveries from "./completedDeliveries";
 import { TablePagination } from "@mui/material";
 
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+
+// Date formatting
+function formatDate(dateString) {
+    const parsedDate = parseISO(dateString);
+
+    if (isToday(parsedDate)) {
+        return "Today";
+    } else if (isYesterday(parsedDate)) {
+        return "Yesterday";
+    } else {
+        return format(parsedDate, "dd MMMM, yyyy");
+    }
+}
 
 const CompletedDeliveriesTable = ({ deliveryData }) => {
     const [page, setPage] = React.useState(0);
@@ -52,8 +66,8 @@ const CompletedDeliveriesTable = ({ deliveryData }) => {
                     <TableHead>
                         <TableRow style={{ fontWeight: 700 }}>
                             <TableCell width="45%">Name</TableCell>
-                            <TableCell width="30%">Restaurant</TableCell>
-                            <TableCell width="20%">Delivery Date</TableCell>
+                            <TableCell width="25%">Restaurant</TableCell>
+                            <TableCell width="25%" align="right">Delivery Date</TableCell>
                             <TableCell />
                         </TableRow>
                     </TableHead>
@@ -73,9 +87,11 @@ const CompletedDeliveriesTable = ({ deliveryData }) => {
                                     />
                                 </TableCell>
                                 <TableCell>{delivery.restaurant}</TableCell>
-                                <TableCell>{delivery.deliveryDate}</TableCell>
+                                <TableCell align="right">{formatDate(delivery.deliveryDate)}</TableCell>
                                 <TableCell>
-                                    <IconButton>    {/* onCLick function to be added */}
+                                    <IconButton>
+                                        {" "}
+                                        {/* onCLick function to be added */}
                                         <MoreVertIcon />
                                     </IconButton>
                                 </TableCell>{" "}
