@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   Grid,
@@ -25,6 +25,8 @@ import {
   ThermostatOutlined,
 } from "@mui/icons-material";
 import HealthStatistics from "./healthStatistics";
+import getRobotData from "../../utils/robotData";
+import { useParams } from "react-router-dom";
 
 const RobotImage = styled("img")({
   width: "100%",
@@ -32,6 +34,10 @@ const RobotImage = styled("img")({
 });
 
 const HealthMonitoringPage = () => {
+  const params = useParams(); // Use the useParams hook to get the robotId from URL param
+  const robotData = getRobotData();
+  const robot = robotData.find((robot) => robot.id === params.id);
+
   return (
     <Box className="bgRobotHealth container">
       <Container
@@ -47,7 +53,7 @@ const HealthMonitoringPage = () => {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <Typography fontWeight="bold" variant="h5" gutterBottom>
-              Robot A
+              {robot.robotName}
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
@@ -56,7 +62,7 @@ const HealthMonitoringPage = () => {
                 <DashboardCard
                   title="Robot Battery"
                   icon={<BatteryFullOutlined />}
-                  heading="80%"
+                  heading={`${robot.battery}%`}
                   subtitle="5 hours remaining"
                   bg={colorPalette().AFULightSuccess}
                   color={colorPalette().AFUSuccess}
@@ -66,7 +72,7 @@ const HealthMonitoringPage = () => {
                 <DashboardCard
                   title="GPS Tracking"
                   icon={<GpsFixedOutlined />}
-                  heading="Active"
+                  heading={robot.gpsTracking ? "Active" : "Inactive"}
                   subtitle={
                     <Button
                       variant="contained"
@@ -86,7 +92,7 @@ const HealthMonitoringPage = () => {
                 <DashboardCard
                   title="Delivery"
                   icon={<LocalShippingOutlined />}
-                  heading="On Route"
+                  heading={robot.deliveryStatus}
                   subtitle="21 mins remaining"
                   bg={colorPalette().AFULightPurple}
                   color={colorPalette().AFUPurple}
@@ -96,7 +102,7 @@ const HealthMonitoringPage = () => {
                 <DashboardCard
                   title="Temperature"
                   icon={<ThermostatOutlined />}
-                  heading="45°C"
+                  heading={`${robot.temperature}°C`}
                   subtitle="Normal"
                   bg={colorPalette().AFULightSuccess}
                   color={colorPalette().AFUSuccess}
@@ -114,7 +120,7 @@ const HealthMonitoringPage = () => {
               <CardContent>
                 <Typography variant="h6">Total Distance Travelled:</Typography>
                 <Typography variant="h4" fontWeight="bold">
-                  500km
+                  {`${robot.totalDistanceTravelled}`}
                 </Typography>
               </CardContent>
             </Card>
@@ -124,7 +130,7 @@ const HealthMonitoringPage = () => {
                   Total Deliveries Completed:
                 </Typography>
                 <Typography variant="h4" fontWeight="bold">
-                  20
+                  {`${robot.totalCompletedDeliveries}`}
                 </Typography>
               </CardContent>
             </Card>
@@ -132,7 +138,7 @@ const HealthMonitoringPage = () => {
               <CardContent>
                 <Typography variant="h6">Area coverage</Typography>
                 <Typography variant="h4" fontWeight="bold">
-                  Area A
+                  {robot.areaCoverage}
                 </Typography>
               </CardContent>
             </Card>

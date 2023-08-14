@@ -18,6 +18,6 @@ const restaurantData = () => {
   ];
 
   return restaurants;
-}
+};
 
 export default restaurantData;

@@ -40,11 +40,8 @@ function App() {
         )}
 
         <Routes>
-          <Route
-            path="/health"
-            element={<HealthMonitoringPage></HealthMonitoringPage>}
-          />
           <Route path="/login" element={<Login toggleLogin={login}></Login>} />
+          <Route path="/health/:id" element={<HealthMonitoringPage />} />
           <Route path="/" element={<Dashboard></Dashboard>} />
         </Routes>
       </Router>

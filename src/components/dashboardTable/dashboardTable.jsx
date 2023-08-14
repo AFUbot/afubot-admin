@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
@@ -21,26 +21,7 @@ import LinearProgress, {
 } from "@mui/material/LinearProgress";
 import { Link } from "react-router-dom";
 
-const robots = [
-  {
-    robotName: "Robot A",
-    status: "Online",
-    lastUpdate: "2023-08-10 10:30AM",
-    battery: 50,
-  },
-  {
-    robotName: "Robot B",
-    status: "Offline",
-    lastUpdate: "N/A",
-    battery: 100,
-  },
-  {
-    robotName: "Robot C",
-    status: "Online",
-    lastUpdate: "2023-08-10 10:25AM",
-    battery: 20,
-  },
-];
+import getRobotData from "../../utils/robotData";
 
 // const detBatteryColor = (val) => {
 //   if (val > 60) {
@@ -51,6 +32,8 @@ const robots = [
 // };
 
 const RobotTable = () => {
+  const [robots, setRobots] = useState(getRobotData);
+
   return (
     <TableContainer component={Paper}>
       <Table aria-label="Robot Table">
@@ -93,7 +76,7 @@ const RobotTable = () => {
                 </Button>
               </TableCell>
               <TableCell>
-                <Link to="/health">
+                <Link to={`/health/${robot.id}`}>
                   <Button
                     sx={{
                       borderRadius: 12,
