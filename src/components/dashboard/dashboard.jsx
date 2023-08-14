@@ -11,8 +11,8 @@ const Dashboard = () => {
     <Box className="container">
       <RobotTable></RobotTable>
       <CardStack></CardStack>
-      <Grid container>
-        <Grid item xs={12} lg={6}>
+      <Grid container sx={{height: '32em', marginBottom: '3em'}}>
+        <Grid item xs={12} lg={6} sx={{padding: '1em'}}>
           <RobotHoursLineChart></RobotHoursLineChart>
         </Grid>
         <Grid item xs={12} lg={6}>
