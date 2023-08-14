@@ -7,7 +7,7 @@ const completedDeliveries = () => {
         address: "Address 42"
       },
       restaurant: "Kafe Selasih, Arked Cengal",
-      deliveryDate: "2023-08-01T00:00:00.000Z"
+      deliveryDate: "2023-08-15T00:00:00.000Z"
     },
     {
       user: {
@@ -16,7 +16,7 @@ const completedDeliveries = () => {
         address: "Address 15"
       },
       restaurant: "Deen Corner, Arked Cengal",
-      deliveryDate: "2023-07-18T00:00:00.000Z"
+      deliveryDate: "2023-08-14T00:00:00.000Z"
     },
     {
       user: {
@@ -51,7 +51,7 @@ const completedDeliveries = () => {
         email: "fiona@example.com",
         address: "Address 68"
       },
-      restaurant: "Cafe (SKM), Sekolah Kejuruteraan Mekanikal (tepi sungai)",
+      restaurant: "Cafe (SKM), SKM",
       deliveryDate: "2023-01-14T00:00:00.000Z"
     },
     {
