@@ -78,7 +78,7 @@ export default function SideBar(props) {
               marginBottom: "-60px",
             }}
           >
-            <img style={{ width: "50%" }} src={Logo}></img>
+            <img style={{ width: "50%" }} src={Logo} alt=""></img>
           </Box>
           <Toolbar />
           <List>
